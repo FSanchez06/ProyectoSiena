@@ -6,7 +6,7 @@
       },
       {
         "id": 2,
-        "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/63afb399-9773-4978-874b-f66695abefc7___d7994d6fd0fbff103e053840c0186c9d.jpg"
+        "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/49877c05-b780-46e3-b97a-7e7c0cbc7649___f79721ceab5ba5b9b5bcb2add87dbcb5.jpg"
       },
       {
         "id": 3,
@@ -162,6 +162,15 @@
         "color": "Naranja",
         "badge": false,
         "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Washed Collection Con 100% algodón Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      },
+      {
+        "_id": "100016",
+        "img": "https://neweraco.vtexassets.com/arquivos/ids/203341/60565355_5.png?v=638598572842470000",
+        "productName": "Gorra World Series Collection",
+        "price": "140.000",
+        "color": "Blanco",
+        "badge": false,
+        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 100% algodón Blanco de los Los Angeles Dodgers Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
       }
     ]
   
