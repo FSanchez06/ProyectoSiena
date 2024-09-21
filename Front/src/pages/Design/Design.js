@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
 import { Canvas } from '@react-three/fiber'
 import { useGLTF, AccumulativeShadows, RandomizedLight, Environment, CameraControls } from '@react-three/drei'
@@ -13,7 +13,7 @@ const Desing = () => {
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Diseño 3D" prevLocation={prevLocation} />
-      <div className="pb-50 h-[100vh] w-[140vh]">
+      <div className="pb-30 h-[100vh] w-[140vh] mt-2 mb-5">
       <Canvas shadows camera={{ position: [5, 0, 5], fov: 35 }}>
       <ambientLight intensity={Math.PI} />
       <Shoe position={[0, 0, 0.85]} scale={10}/>
