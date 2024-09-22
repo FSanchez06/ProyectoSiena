@@ -1,75 +1,133 @@
-import React, { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion"; // Importamos Framer Motion
 import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
 
 const Contact = () => {
   const location = useLocation();
+  const navigate = useNavigate(); // Para redireccionar al formulario original
   const [prevLocation, setPrevLocation] = useState("");
-  useEffect(() => {
-    setPrevLocation(location.state.data);
-  }, [location]);
-
-  const [clientName, setclientName] = useState("");
+  const [clientName, setClientName] = useState("");
   const [email, setEmail] = useState("");
-  const [messages, setMessages] = useState("");
+  const [message, setMessage] = useState("");
+  const [completed, setCompleted] = useState(false);
 
-  // ========== Error Messages Start here ============
+  // ========== Mensajes de error y éxito ============
   const [errClientName, setErrClientName] = useState("");
   const [errEmail, setErrEmail] = useState("");
-  const [errMessages, setErrMessages] = useState("");
-  // ========== Error Messages End here ==============
-  const [successMsg, setSuccessMsg] = useState("");
+  const [errMessage, setErrMessage] = useState("");
+  const [successMsg, setSuccessMsg] = useState(false);
+
+  // Simulación de mensaje previo
+  useEffect(() => {
+    setPrevLocation(location.state?.data || "Inicio");
+  }, [location]);
 
   const handleName = (e) => {
-    setclientName(e.target.value);
+    setClientName(e.target.value);
     setErrClientName("");
   };
+
   const handleEmail = (e) => {
     setEmail(e.target.value);
     setErrEmail("");
   };
-  const handleMessages = (e) => {
-    setMessages(e.target.value);
-    setErrMessages("");
+
+  const handleMessage = (e) => {
+    setMessage(e.target.value);
+    setErrMessage("");
   };
 
-  // ================= Email Validation start here =============
+  // Validación de email
   const EmailValidation = (email) => {
-    return String(email)
-      .toLowerCase()
-      .match(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i);
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
-  // ================= Email Validation End here ===============
 
-  const handlePost = (e) => {
+  // Función para manejar el envío del formulario
+  const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Reiniciar errores
+    setErrClientName("");
+    setErrEmail("");
+    setErrMessage("");
+    setSuccessMsg(false);
+
+    // Validaciones
     if (!clientName) {
       setErrClientName("Ingrese su nombre");
+      return;
     }
     if (!email) {
-      setErrEmail("Ingrese su Email");
-    } else {
-      if (!EmailValidation(email)) {
-        setErrEmail("Email no valido");
-      }
+      setErrEmail("Ingrese su email");
+      return;
+    } else if (!EmailValidation(email)) {
+      setErrEmail("Email no válido");
+      return;
     }
-    if (!messages) {
-      setErrMessages("Ingrese un mensaje");
+    if (!message) {
+      setErrMessage("Ingrese un mensaje");
+      return;
     }
-    if (clientName && email && EmailValidation(email) && messages) {
-      setSuccessMsg(
-        `Muchas Gracias ${clientName}, Tu mensaje fue enviado correctamente, reseviras una respuesta al correo ${email}.`
-      );
-    }
+
+    // Mostrar mensaje de éxito inmediatamente
+    setCompleted(true);
+    setSuccessMsg(true);
+  };
+
+  // Función para redirigir al formulario anterior
+  const handleNavigateBack = () => {
+    navigate(-0); // Navegar a la página anterior (el formulario)
   };
 
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Contacto" prevLocation={prevLocation} />
       {successMsg ? (
-        <p className="pb-20 w-96 font-medium text-green-500">{successMsg}</p>
+        // Modal de éxito
+        <motion.div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <motion.div
+            className="bg-white p-10 rounded-lg shadow-lg text-center w-[400px] h-[300px] flex flex-col items-center justify-center"
+            initial={{ scale: 0.5 }}
+            animate={{ scale: 1 }}
+            transition={{ duration: 0.5 }}
+          >
+            {completed && (
+              <>
+                <p className="text-lg font-semibold mb-6">
+                  Mensaje enviado correctamente
+                </p>
+                <motion.div
+                  className="w-16 h-16 border-4 border-green-500 rounded-full flex items-center justify-center"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                >
+                  <motion.div
+                    className="text-green-500 text-4xl font-bold"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    ✔
+                  </motion.div>
+                </motion.div>
+                <button
+                  onClick={handleNavigateBack}
+                  className="mt-6 bg-primeColor text-white px-4 py-2 rounded-md hover:bg-black transition duration-300"
+                >
+                  Seguir navegando
+                </button>
+              </>
+            )}
+          </motion.div>
+        </motion.div>
       ) : (
-        <form className="pb-20 ml-5">
+        <form className="pb-20 ml-5" onSubmit={handleSubmit}>
           <h1 className="font-titleFont font-semibold text-3xl">
             Llene el Formulario
           </h1>
@@ -86,8 +144,7 @@ const Contact = () => {
                 placeholder="Ingrese su Nombre"
               />
               {errClientName && (
-                <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2 flex items-center gap-1">
-                  <span className="text-sm italic font-bold">!</span>
+                <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2">
                   {errClientName}
                 </p>
               )}
@@ -104,8 +161,7 @@ const Contact = () => {
                 placeholder="Ingrese su Email"
               />
               {errEmail && (
-                <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2 flex items-center gap-1">
-                  <span className="text-sm italic font-bold">!</span>
+                <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2">
                   {errEmail}
                 </p>
               )}
@@ -115,23 +171,21 @@ const Contact = () => {
                 Mensaje
               </p>
               <textarea
-                onChange={handleMessages}
-                value={messages}
+                onChange={handleMessage}
+                value={message}
                 cols="30"
                 rows="3"
                 className="w-full py-1 border-b-2 px-2 text-base font-medium placeholder:font-normal placeholder:text-sm outline-none focus-within:border-primeColor resize-none"
-                type="text"
                 placeholder="Ingrese el Mensaje"
-              ></textarea>
-              {errMessages && (
-                <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2 flex items-center gap-1">
-                  <span className="text-sm italic font-bold">!</span>
-                  {errMessages}
+              />
+              {errMessage && (
+                <p className="text-red-500 text-sm font-titleFont font-semibold mt-1 px-2">
+                  {errMessage}
                 </p>
               )}
             </div>
             <button
-              onClick={handlePost}
+              type="submit"
               className="w-44 bg-primeColor text-gray-200 h-10 font-titleFont text-base tracking-wide font-semibold hover:bg-black hover:text-white duration-200"
             >
               Enviar

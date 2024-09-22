@@ -13,7 +13,7 @@ const Desing = () => {
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Diseño 3D" prevLocation={prevLocation} />
-      <div className="pb-30 h-[100vh] w-[140vh] mt-2 mb-5">
+      <div className="pb-30 h-[100vh] w-[150vh] mt-2 mb-5 flex aling-center">
       <Canvas shadows camera={{ position: [5, 0, 5], fov: 35 }}>
       <ambientLight intensity={Math.PI} />
       <Shoe position={[0, 0, 0.85]} scale={10}/>
