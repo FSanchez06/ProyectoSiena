@@ -1,177 +1,208 @@
 {
-    "banners": [
-      {
-        "id": 1,
-        "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/42fad78c-bdca-4a08-87fd-7c430d774be7___66024df4ff3821c2e5898baf32be5ced.jpg"
-      },
-      {
-        "id": 2,
-        "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/49877c05-b780-46e3-b97a-7e7c0cbc7649___f79721ceab5ba5b9b5bcb2add87dbcb5.jpg"
-      },
-      {
-        "id": 3,
-        "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/7400e4f7-320d-46fd-af5b-293f12ba56ac___78bc5192c9395c9c8525d6554756efa4.jpg"
-      }
-    ],
-    "sales": [
-      {
-        "id": 1,
-        "imageUrl": "https://newera.com.ar/media/wysiwyg/sliders/newera/Banners-NE-Febrero-02-mobile.jpg"
-      },
-      {
-        "id": 2,
-        "imageUrl": "https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCO/72772163_91/w=800,h=800,fit=pad"
-      },
-      {
-        "id": 3,
-        "imageUrl": "https://newera.com.ar/media/wysiwyg/sliders/newera/Banners-NE-Febrero-koi-fish-mobile.jpg"
-      }
-    ],
-    "products": [
-      {
-        "_id": "100001",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/203920/14323033_1.png?v=638612530817100000",
-        "productName": "Gorra Ricardo Luevanos Collection",
-        "price": "100.000",
-        "color": "Beige",
-        "badge": true,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Ricardo Luevanos Collection Con material 100% poliéster Color Beige de Ricardo Luevanos Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100002",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/203322/60565194_5.png?v=638598572582270000",
-        "productName": "Gorra World Series Collection",
-        "price": "120.000",
-        "color": "Verde",
-        "badge": true,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 97% algodón Verde de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100003",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/203313/60565185_5.png?v=638598572500700000",
-        "productName": "Gorra World Series Collection",
-        "price": "150.000",
-        "color": "Blanco",
-        "badge": true,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 97% algodón Blanco de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100004",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/202541/60565494_1.png?v=638598564564230000",
-        "productName": "Gorra Nfl Team Color Collection",
-        "price": "90.000",
-        "color": "Morado",
-        "badge": true,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Nfl Team Color Collection Con 100% algodón Morado de los Minnesota Vikings Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100005",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/203909/60565392_1.png?v=638612530750300000",
-        "productName": "Gorra Cord Collection LOW PROFILE",
-        "price": "160.000",
-        "color": "Beige y Negro",
-        "badge": true,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Cord Collection Con 92% algodón de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100006",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/203933/60593285_1.png?v=638612530879730000",
-        "productName": "Gorra Visa Cash App RB Flawles",
-        "price": "60.000",
-        "color": "Azul",
-        "badge": true,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Flawless Vcarbs Collection Con material 100% Algodón Color Azul de Visa Cash Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100007",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/202465/60565173_1.png?v=638598563769030000",
-        "productName": "Gorra Monochrome Collection",
-        "price": "100.000",
-        "color": "Negro",
-        "badge": true,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Monochrome Collection Con 100% algodón Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100008",
-        "img": "https://merrellcol.vtexassets.com/arquivos/ids/198789-1200-1800?v=638297278037370000&width=1200&height=1800&aspect=true",
-        "productName": "Gorro M Patch Beanie Color Gris ",
-        "price": "90.000",
-        "color": "Gris",
-        "badge": false,
-        "des": "Le damos la bienvenida al gorro Patch Beanie, tu mejor aliado para protegerte en tus aventuras a bajas temperaturas. Fabricado principalmente en materiales reciclados"
-      },
-      {
-        "_id": "100009",
-        "img": "https://merrellcol.vtexassets.com/arquivos/ids/206604-1200-1800?v=638506905133070000&width=1200&height=1800&aspect=true",
-        "productName": "Gorro Cochamo Beanie Unisex-Black",
-        "price": "80.000",
-        "color": "Negro",
-        "badge": false,
-        "des": "Te presentamos nuestro beanie Cochamó, una opción sostenible, cálida y cómoda para mantenerte abrigado con estilo."
-      },
-      {
-        "_id": "100010",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/174401/70358700_1.png?v=638260937337030000",
-        "productName": "Gorra Ac Performance color Negro",
-        "price": "100.000",
-        "color": "Negro",
-        "badge": false,
-        "des": "Completa tu outfit y sube de nivel tu estilo con esta gorra de los Chicago White Sox, Compra ahora tú Gorra Chicago White Sox"
-      },
-      {
-        "_id": "100011",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/202414/60565120_1.png?v=638598563337570000",
-        "productName": "Gorra Seasonal Infill Collection",
-        "price": "100.000",
-        "color": "Gris",
-        "badge": false,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Seasonal Infill Collection Con 100% algodón Gris de los Los Angeles Dodgers Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100012",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/200826/60565294_1.png?v=638578704999770000",
-        "productName": "Gorra Ocean Icon Collection",
-        "price": "50.000",
-        "color": "Blanco",
-        "badge": false,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Ocean Icon Collection Con 100% poliéster Reciclado Blanco de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100013",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/198515/60553932_1.png?v=638551072538870000",
-        "productName": "Gorra Pinstripe Collection color Gris",
-        "price": "50.000",
-        "color": "Blanco y Negro",
-        "badge": false,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Pinstripe Collection Con Corona y medios 100% poliéster Negro de los New York Yankees"
-      },
-      {
-        "_id": "100014",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/203891/60565346_1.png?v=638612530660370000",
-        "productName": "Gorra Camo Collection Militar",
-        "price": "40.000",
-        "color": "Beige",
-        "badge": false,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Camo Collection Con 100% poliéster Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100015",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/202492/60565338_1.png?v=638598564072870000",
-        "productName": "Gorra Washed Collection color Naranja",
-        "price": "40.000",
-        "color": "Naranja",
-        "badge": false,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Washed Collection Con 100% algodón Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      },
-      {
-        "_id": "100016",
-        "img": "https://neweraco.vtexassets.com/arquivos/ids/203341/60565355_5.png?v=638598572842470000",
-        "productName": "Gorra World Series Collection",
-        "price": "140.000",
-        "color": "Blanco",
-        "badge": false,
-        "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 100% algodón Blanco de los Los Angeles Dodgers Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
-      }
-    ]
-  
-  }
+  "banners": [
+    {
+      "id": 1,
+      "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/42fad78c-bdca-4a08-87fd-7c430d774be7___66024df4ff3821c2e5898baf32be5ced.jpg"
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/49877c05-b780-46e3-b97a-7e7c0cbc7649___f79721ceab5ba5b9b5bcb2add87dbcb5.jpg"
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/7400e4f7-320d-46fd-af5b-293f12ba56ac___78bc5192c9395c9c8525d6554756efa4.jpg"
+    }
+  ],
+  "sales": [
+    {
+      "id": 1,
+      "imageUrl": "https://newera.com.ar/media/wysiwyg/sliders/newera/Banners-NE-Febrero-02-mobile.jpg"
+    },
+    {
+      "id": 2,
+      "imageUrl": "https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCO/72772163_91/w=800,h=800,fit=pad"
+    },
+    {
+      "id": 3,
+      "imageUrl": "https://newera.com.ar/media/wysiwyg/sliders/newera/Banners-NE-Febrero-koi-fish-mobile.jpg"
+    }
+  ],
+  "products": [
+    {
+      "_id": "100001",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/203920/14323033_1.png?v=638612530817100000",
+      "productName": "Gorra Ricardo Luevanos Collection",
+      "price": "100.000",
+      "color": "Beige",
+      "badge": true,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Ricardo Luevanos Collection Con material 100% poliéster Color Beige de Ricardo Luevanos Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100002",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/203322/60565194_5.png?v=638598572582270000",
+      "productName": "Gorra World Series Collection",
+      "price": "120.000",
+      "color": "Verde",
+      "badge": true,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 97% algodón Verde de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100003",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/203313/60565185_5.png?v=638598572500700000",
+      "productName": "Gorra World Series Collection",
+      "price": "150.000",
+      "color": "Blanco",
+      "badge": true,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 97% algodón Blanco de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100004",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/202541/60565494_1.png?v=638598564564230000",
+      "productName": "Gorra Nfl Team Color Collection",
+      "price": "90.000",
+      "color": "Morado",
+      "badge": true,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Nfl Team Color Collection Con 100% algodón Morado de los Minnesota Vikings Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100005",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/203909/60565392_1.png?v=638612530750300000",
+      "productName": "Gorra Cord Collection LOW PROFILE",
+      "price": "160.000",
+      "color": "Beige y Negro",
+      "badge": true,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Cord Collection Con 92% algodón de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100006",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/203933/60593285_1.png?v=638612530879730000",
+      "productName": "Gorra Visa Cash App RB Flawles",
+      "price": "60.000",
+      "color": "Azul",
+      "badge": true,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Flawless Vcarbs Collection Con material 100% Algodón Color Azul de Visa Cash Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100007",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/202465/60565173_1.png?v=638598563769030000",
+      "productName": "Gorra Monochrome Collection",
+      "price": "100.000",
+      "color": "Negro",
+      "badge": true,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Monochrome Collection Con 100% algodón Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100008",
+      "img": "https://merrellcol.vtexassets.com/arquivos/ids/198789-1200-1800?v=638297278037370000&width=1200&height=1800&aspect=true",
+      "productName": "Gorro M Patch Beanie Color Gris ",
+      "price": "90.000",
+      "color": "Gris",
+      "badge": false,
+      "des": "Le damos la bienvenida al gorro Patch Beanie, tu mejor aliado para protegerte en tus aventuras a bajas temperaturas. Fabricado principalmente en materiales reciclados"
+    },
+    {
+      "_id": "100009",
+      "img": "https://merrellcol.vtexassets.com/arquivos/ids/206604-1200-1800?v=638506905133070000&width=1200&height=1800&aspect=true",
+      "productName": "Gorro Cochamo Beanie Unisex-Black",
+      "price": "80.000",
+      "color": "Negro",
+      "badge": false,
+      "des": "Te presentamos nuestro beanie Cochamó, una opción sostenible, cálida y cómoda para mantenerte abrigado con estilo."
+    },
+    {
+      "_id": "100010",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/174401/70358700_1.png?v=638260937337030000",
+      "productName": "Gorra Ac Performance color Negro",
+      "price": "100.000",
+      "color": "Negro",
+      "badge": false,
+      "des": "Completa tu outfit y sube de nivel tu estilo con esta gorra de los Chicago White Sox, Compra ahora tú Gorra Chicago White Sox"
+    },
+    {
+      "_id": "100011",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/202414/60565120_1.png?v=638598563337570000",
+      "productName": "Gorra Seasonal Infill Collection",
+      "price": "100.000",
+      "color": "Gris",
+      "badge": false,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Seasonal Infill Collection Con 100% algodón Gris de los Los Angeles Dodgers Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100012",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/200826/60565294_1.png?v=638578704999770000",
+      "productName": "Gorra Ocean Icon Collection",
+      "price": "50.000",
+      "color": "Blanco",
+      "badge": false,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Ocean Icon Collection Con 100% poliéster Reciclado Blanco de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100013",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/198515/60553932_1.png?v=638551072538870000",
+      "productName": "Gorra Pinstripe Collection color Gris",
+      "price": "50.000",
+      "color": "Blanco y Negro",
+      "badge": false,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Pinstripe Collection Con Corona y medios 100% poliéster Negro de los New York Yankees"
+    },
+    {
+      "_id": "100014",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/203891/60565346_1.png?v=638612530660370000",
+      "productName": "Gorra Camo Collection Militar",
+      "price": "40.000",
+      "color": "Beige",
+      "badge": false,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Camo Collection Con 100% poliéster Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100015",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/202492/60565338_1.png?v=638598564072870000",
+      "productName": "Gorra Washed Collection color Naranja",
+      "price": "40.000",
+      "color": "Naranja",
+      "badge": false,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Washed Collection Con 100% algodón Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    },
+    {
+      "_id": "100016",
+      "img": "https://neweraco.vtexassets.com/arquivos/ids/203341/60565355_5.png?v=638598572842470000",
+      "productName": "Gorra World Series Collection",
+      "price": "140.000",
+      "color": "Blanco",
+      "badge": false,
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 100% algodón Blanco de los Los Angeles Dodgers Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+    }
+  ],
+  "messages": [
+    {
+      "id": "cb33",
+      "name": "Felipe Sanchez",
+      "email": "felipe@gmail.com",
+      "message": "Hola buenas tardes! Queria decir que me encantan sus gorras! :D"
+    },
+    {
+      "id": "1aa2",
+      "name": "Jhonatan Rozo",
+      "email": "jhona@gmail.com",
+      "message": "Estan muy chimbas las gorras pero me gustaria que hayan gorras mas coloridas y nuevas "
+    },
+    {
+      "id": "8a67",
+      "name": "Angela Contreras",
+      "email": "angela@gmail.com",
+      "message": "Me encantan sus gorras :DDDDD"
+    },
+    {
+      "id": "6f22",
+      "name": "Salazar",
+      "email": "saliz@gmail.com",
+      "message": "Todo muy genial\n"
+    },
+    {
+      "id": "a15b",
+      "name": "German ",
+      "email": "german@gmail.com",
+      "message": "Buenas"
+    }
+  ]
+}

@@ -1,24 +1,23 @@
 import React, { useState, useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import { motion } from "framer-motion"; // Importamos Framer Motion
+import { motion } from "framer-motion"; 
 import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
+import axios from "axios"; // Asegúrate de instalar Axios
 
 const Contact = () => {
   const location = useLocation();
-  const navigate = useNavigate(); // Para redireccionar al formulario original
+  const navigate = useNavigate();
   const [prevLocation, setPrevLocation] = useState("");
   const [clientName, setClientName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [completed, setCompleted] = useState(false);
 
-  // ========== Mensajes de error y éxito ============
   const [errClientName, setErrClientName] = useState("");
   const [errEmail, setErrEmail] = useState("");
   const [errMessage, setErrMessage] = useState("");
   const [successMsg, setSuccessMsg] = useState(false);
 
-  // Simulación de mensaje previo
   useEffect(() => {
     setPrevLocation(location.state?.data || "Inicio");
   }, [location]);
@@ -38,22 +37,18 @@ const Contact = () => {
     setErrMessage("");
   };
 
-  // Validación de email
   const EmailValidation = (email) => {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   };
 
-  // Función para manejar el envío del formulario
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Reiniciar errores
     setErrClientName("");
     setErrEmail("");
     setErrMessage("");
     setSuccessMsg(false);
 
-    // Validaciones
     if (!clientName) {
       setErrClientName("Ingrese su nombre");
       return;
@@ -70,21 +65,33 @@ const Contact = () => {
       return;
     }
 
-    // Mostrar mensaje de éxito inmediatamente
-    setCompleted(true);
-    setSuccessMsg(true);
+    try {
+      const response = await axios.post("http://localhost:3002/messages", {
+        name: clientName,
+        email: email,
+        message: message,
+      });
+
+      if (response.status === 201) {
+        setCompleted(true);
+        setSuccessMsg(true);
+        setClientName("");
+        setEmail("");
+        setMessage("");
+      }
+    } catch (error) {
+      console.error("Error al enviar el mensaje:", error);
+    }
   };
 
-  // Función para redirigir al formulario anterior
   const handleNavigateBack = () => {
-    navigate(-0); // Navegar a la página anterior (el formulario)
+    navigate(-0);
   };
 
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Contacto" prevLocation={prevLocation} />
       {successMsg ? (
-        // Modal de éxito
         <motion.div
           className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
           initial={{ opacity: 0 }}
@@ -133,9 +140,7 @@ const Contact = () => {
           </h1>
           <div className="w-[500px] h-auto py-6 flex flex-col gap-6">
             <div>
-              <p className="text-base font-titleFont font-semibold px-2">
-                Nombre
-              </p>
+              <p className="text-base font-titleFont font-semibold px-2">Nombre</p>
               <input
                 onChange={handleName}
                 value={clientName}
@@ -150,9 +155,7 @@ const Contact = () => {
               )}
             </div>
             <div>
-              <p className="text-base font-titleFont font-semibold px-2">
-                Email
-              </p>
+              <p className="text-base font-titleFont font-semibold px-2">Email</p>
               <input
                 onChange={handleEmail}
                 value={email}
@@ -167,9 +170,7 @@ const Contact = () => {
               )}
             </div>
             <div>
-              <p className="text-base font-titleFont font-semibold px-2">
-                Mensaje
-              </p>
+              <p className="text-base font-titleFont font-semibold px-2">Mensaje</p>
               <textarea
                 onChange={handleMessage}
                 value={message}
