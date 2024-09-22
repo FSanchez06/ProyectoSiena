@@ -44,21 +44,21 @@ const Contact = () => {
   const handlePost = (e) => {
     e.preventDefault();
     if (!clientName) {
-      setErrClientName("Enter your Name");
+      setErrClientName("Ingrese su nombre");
     }
     if (!email) {
-      setErrEmail("Enter your Email");
+      setErrEmail("Ingrese su Email");
     } else {
       if (!EmailValidation(email)) {
-        setErrEmail("Enter a Valid Email");
+        setErrEmail("Email no valido");
       }
     }
     if (!messages) {
-      setErrMessages("Enter your Messages");
+      setErrMessages("Ingrese un mensaje");
     }
     if (clientName && email && EmailValidation(email) && messages) {
       setSuccessMsg(
-        `Thank you dear ${clientName}, Your messages has been received successfully. Futher details will sent to you by your email at ${email}.`
+        `Muchas Gracias ${clientName}, Tu mensaje fue enviado correctamente, reseviras una respuesta al correo ${email}.`
       );
     }
   };

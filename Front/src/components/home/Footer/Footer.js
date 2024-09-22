@@ -101,7 +101,7 @@ const Footer = () => {
                 transition={{ duration: 0.5 }}
                 className="w-full text-center text-base font-titleFont font-semibold text-green-600"
               >
-                Subscribed Successfully !
+                Subscripcion completada!
               </motion.p>
             ) : (
               <div className="w-full flex-col xl:flex-row flex justify-between items-center gap-4">
