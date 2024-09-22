@@ -204,5 +204,43 @@
       "email": "german@gmail.com",
       "message": "Buenas"
     }
+  ],
+  "users": [
+    {
+      "id": "af91",
+      "photo": "https://media.istockphoto.com/id/1495088043/es/vector/icono-de-perfil-de-usuario-avatar-o-icono-de-persona-foto-de-perfil-s%C3%ADmbolo-de-retrato.jpg?s=612x612&w=0&k=20&c=mY3gnj2lU7khgLhV6dQBNqomEGj3ayWH-xtpYuCXrzk=",
+      "name": "Felipe Sanchez",
+      "email": "felipe@gmail.com",
+      "phone": "3227238923",
+      "password": "$2a$10$IkL.5naXRZP7VGPXqmP0Yuo.gKr5i.boMPGfsBarXb4UEcPKf9aNm",
+      "address": "3398",
+      "city": "Bogotá",
+      "zip": "110611",
+      "role": "Administrador"
+    },
+    {
+      "id": "5904",
+      "photo": "https://media.istockphoto.com/id/1495088043/es/vector/icono-de-perfil-de-usuario-avatar-o-icono-de-persona-foto-de-perfil-s%C3%ADmbolo-de-retrato.jpg?s=612x612&w=0&k=20&c=mY3gnj2lU7khgLhV6dQBNqomEGj3ayWH-xtpYuCXrzk=",
+      "name": "Narly Sanchez",
+      "email": "narly@gmail.com",
+      "phone": "3134475678",
+      "password": "$2a$10$G9PGUgIjVAM59R207RQcZu5AEZPyTJXBKV6.u8IjwzajN3N6OWjTC",
+      "address": "Cl. 55 Sur #33-15",
+      "city": "Bogotá",
+      "zip": "110611",
+      "role": "Empleado"
+    },
+    {
+      "id": "385d",
+      "photo": "https://media.istockphoto.com/id/1495088043/es/vector/icono-de-perfil-de-usuario-avatar-o-icono-de-persona-foto-de-perfil-s%C3%ADmbolo-de-retrato.jpg?s=612x612&w=0&k=20&c=mY3gnj2lU7khgLhV6dQBNqomEGj3ayWH-xtpYuCXrzk=",
+      "name": "Johan Salazar",
+      "email": "jhoan@gmail.com",
+      "phone": "3106015401",
+      "password": "$2a$10$iCnwJyKWABrkFno.6L.97eCmfnT5M26KfqXkr1E.D6/K9l89jF8yq",
+      "address": "Cl. 59 Sur #33-15",
+      "city": "Bogotá",
+      "zip": "110611",
+      "role": "Cliente"
+    }
   ]
 }

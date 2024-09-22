@@ -7,7 +7,7 @@ const Offer = () => {
 
   return (
     <div className="max-w-container mx-auto">
-      <Breadcrumbs title="Offer" prevLocation={prevLocation} />
+      <Breadcrumbs title="Ofertas" prevLocation={prevLocation} />
       <div className="pb-10">
         <SpecialOffers />
       </div>

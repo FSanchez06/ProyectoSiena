@@ -4,13 +4,17 @@ import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import Flex from "../../designLayouts/Flex";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";  // Importar Axios para hacer la petición a la API
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { removeUserInfo, resetCart } from "../../../redux/orebiSlice"; // Importar acciones de Redux
 
 const HeaderBottom = () => {
   const products = useSelector((state) => state.orebiReducer.products);  // Estado global para los productos
+  const userInfo = useSelector((state) => state.orebiReducer.userInfo);  // Estado global para el usuario
   const [show, setShow] = useState(false);
   const [showUser, setShowUser] = useState(false);
+  const [showLogoutModal, setShowLogoutModal] = useState(false);  // Estado para mostrar el modal de logout
   const navigate = useNavigate();
+  const dispatch = useDispatch();  // Para manejar acciones de Redux
   const ref = useRef();
 
   useEffect(() => {
@@ -55,6 +59,14 @@ const HeaderBottom = () => {
     );
     setFilteredProducts(filtered);
   }, [searchQuery, apiProducts]);
+
+  // Función para manejar el cierre de sesión
+  const handleLogout = () => {
+    dispatch(removeUserInfo());  // Eliminar información del usuario del estado global
+    dispatch(resetCart());  // Resetear el carrito (opcional)
+    navigate("/signin");  // Redirigir al login
+    setShowLogoutModal(false);  // Cerrar el modal
+  };
 
   return (
     <div className="w-full bg-[#F5F5F3] relative">
@@ -128,19 +140,34 @@ const HeaderBottom = () => {
                 transition={{ duration: 0.5 }}
                 className="absolute top-6 left-0 z-50 bg-primeColor w-44 text-[#767676] h-auto p-4 pb-6"
               >
-                <Link to="/signin">
-                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                    Login
-                  </li>
-                </Link>
-                <Link onClick={() => setShowUser(false)} to="/signup">
-                  <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                    Registro
-                  </li>
-                </Link>
-                <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
-                  Perfil
-                </li>
+                {!userInfo.length ? (
+                  <>
+                    <Link to="/signin">
+                      <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                        Login
+                      </li>
+                    </Link>
+                    <Link onClick={() => setShowUser(false)} to="/signup">
+                      <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                        Registro
+                      </li>
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link to="/profile">
+                      <li className="text-gray-400 px-4 py-1 border-b-[1px] border-b-gray-400 hover:border-b-white hover:text-white duration-300 cursor-pointer">
+                        Perfil
+                      </li>
+                    </Link>
+                    <li
+                      className="text-gray-400 px-4 py-1 hover:text-white duration-300 cursor-pointer"
+                      onClick={() => setShowLogoutModal(true)}  // Mostrar modal al hacer clic en Log Out
+                    >
+                      Log Out
+                    </li>
+                  </>
+                )}
               </motion.ul>
             )}
             <Link to="/cart">
@@ -154,6 +181,34 @@ const HeaderBottom = () => {
           </div>
         </Flex>
       </div>
+
+      {/* Modal de confirmación de Log Out */}
+      {showLogoutModal && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <motion.div
+            className="bg-white p-6 rounded-lg shadow-lg"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -50 }}
+          >
+            <p className="text-lg font-semibold mb-4">¿Estás seguro de querer cerrar sesión?</p>
+            <div className="flex justify-center gap-4">
+              <button
+                className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
+                onClick={handleLogout}  // Cerrar sesión si selecciona "Sí"
+              >
+                Sí
+              </button>
+              <button
+                className="bg-gray-300 text-black px-4 py-2 rounded hover:bg-gray-400"
+                onClick={() => setShowLogoutModal(false)}  // Cerrar modal si selecciona "No"
+              >
+                No
+              </button>
+            </div>
+          </motion.div>
+        </div>
+      )}
     </div>
   );
 };
