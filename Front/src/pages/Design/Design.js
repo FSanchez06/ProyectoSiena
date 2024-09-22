@@ -15,42 +15,42 @@ import './styles.css';
 const Desing = () => {
   const location = useLocation();
   const [prevLocation, setPrevLocation] = useState("");
-  const [modelColors, setModelColors] = useState(["#ffffff", "#ffffff", "#ffffff", "#ffffff"]); // Colores iniciales
+  const [colors, setColors] = useState(["#ffffff", "#ffffff", "#ffffff", "#ffffff"]); // Estado para los colores de cada modelo
 
   useEffect(() => {
     setPrevLocation(location.state?.data || "Inicio");
   }, [location]);
 
+  // Manejar el cambio de color para cada slide
   const handleColorChange = (index, color) => {
-    const newColors = [...modelColors];
+    const newColors = [...colors];
     newColors[index] = color;
-    setModelColors(newColors);
+    setColors(newColors);
   };
 
   return (
     <div className="max-w-container mx-auto px-4">
       <Breadcrumbs title="Diseño 3D" prevLocation={prevLocation} />
-      <div className="pb-30 h-[100vh] mt-2 mb-5 flex items-center">
+      <div className="pb-30 h-[100vh] w-[150vh] mt-2 mb-5 flex items-center">
         <Swiper
           slidesPerView={1}
           spaceBetween={30}
           loop={true}
           pagination={{ clickable: true }}
           navigation={true}
+          allowTouchMove={false} // Desactiva el deslizamiento
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
-          {modelColors.map((color, index) => (
+          {colors.map((color, index) => (
             <SwiperSlide key={index}>
               <ThreeDSlide modelPath="/shoe.gltf" color={color} />
-              <input
-                type="color"
-                value={color}
-                onChange={(e) => handleColorChange(index, e.target.value)}
-                className="absolute top-4 right-4" // Posición del selector de color
-              />
-              <div className="absolute bottom-4 left-4 text-black text-2xl">
-                Modelo {index + 1}: {color}
+              <div className="absolute top-4 right-4">
+                <input 
+                  type="color" 
+                  value={color} 
+                  onChange={(e) => handleColorChange(index, e.target.value)} 
+                />
               </div>
             </SwiperSlide>
           ))}
@@ -73,19 +73,16 @@ const ThreeDSlide = ({ modelPath, color }) => (
   </Canvas>
 );
 
+// El componente Model aplicará el color a todos los materiales
 function Model({ modelPath, color, ...props }) {
   const { nodes, materials } = useGLTF(modelPath);
 
-  // Asegúrate de que el color se aplique a todos los materiales
   useEffect(() => {
-    materials.laces.color.set(color);
-    materials.mesh.color.set(color);
-    materials.caps.color.set(color);
-    materials.inner.color.set(color);
-    materials.sole.color.set(color);
-    materials.stripes.color.set(color);
-    materials.band.color.set(color);
-    materials.patch.color.set(color);
+    if (materials) {
+      Object.keys(materials).forEach((key) => {
+        materials[key].color.set(color); // Aplica el color a todos los materiales del modelo
+      });
+    }
   }, [color, materials]);
 
   return (
