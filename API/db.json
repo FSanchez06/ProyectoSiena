@@ -1,29 +1,29 @@
 {
   "banners": [
     {
-      "id": 1,
+      "id": "1",
       "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/42fad78c-bdca-4a08-87fd-7c430d774be7___66024df4ff3821c2e5898baf32be5ced.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/49877c05-b780-46e3-b97a-7e7c0cbc7649___f79721ceab5ba5b9b5bcb2add87dbcb5.jpg"
     },
     {
-      "id": 3,
+      "id": "3",
       "imageUrl": "https://neweraco.vtexassets.com/assets/vtex.file-manager-graphql/images/7400e4f7-320d-46fd-af5b-293f12ba56ac___78bc5192c9395c9c8525d6554756efa4.jpg"
     }
   ],
   "sales": [
     {
-      "id": 1,
+      "id": "1",
       "imageUrl": "https://newera.com.ar/media/wysiwyg/sliders/newera/Banners-NE-Febrero-02-mobile.jpg"
     },
     {
-      "id": 2,
+      "id": "2",
       "imageUrl": "https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCO/72772163_91/w=800,h=800,fit=pad"
     },
     {
-      "id": 3,
+      "id": "3",
       "imageUrl": "https://newera.com.ar/media/wysiwyg/sliders/newera/Banners-NE-Febrero-koi-fish-mobile.jpg"
     }
   ],
@@ -35,7 +35,8 @@
       "price": "100.000",
       "color": "Beige",
       "badge": true,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Ricardo Luevanos Collection Con material 100% poliéster Color Beige de Ricardo Luevanos Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Ricardo Luevanos Collection Con material 100% poliéster Color Beige de Ricardo Luevanos Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "cd49"
     },
     {
       "_id": "100002",
@@ -44,7 +45,8 @@
       "price": "120.000",
       "color": "Verde",
       "badge": true,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 97% algodón Verde de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 97% algodón Verde de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "9b04"
     },
     {
       "_id": "100003",
@@ -53,7 +55,8 @@
       "price": "150.000",
       "color": "Blanco",
       "badge": true,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 97% algodón Blanco de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 97% algodón Blanco de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "d4f9"
     },
     {
       "_id": "100004",
@@ -62,7 +65,8 @@
       "price": "90.000",
       "color": "Morado",
       "badge": true,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Nfl Team Color Collection Con 100% algodón Morado de los Minnesota Vikings Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Nfl Team Color Collection Con 100% algodón Morado de los Minnesota Vikings Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "31db"
     },
     {
       "_id": "100005",
@@ -71,7 +75,8 @@
       "price": "160.000",
       "color": "Beige y Negro",
       "badge": true,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Cord Collection Con 92% algodón de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Cord Collection Con 92% algodón de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "0613"
     },
     {
       "_id": "100006",
@@ -80,7 +85,8 @@
       "price": "60.000",
       "color": "Azul",
       "badge": true,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Flawless Vcarbs Collection Con material 100% Algodón Color Azul de Visa Cash Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Flawless Vcarbs Collection Con material 100% Algodón Color Azul de Visa Cash Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "25d1"
     },
     {
       "_id": "100007",
@@ -89,7 +95,8 @@
       "price": "100.000",
       "color": "Negro",
       "badge": true,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Monochrome Collection Con 100% algodón Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Monochrome Collection Con 100% algodón Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "3cce"
     },
     {
       "_id": "100008",
@@ -98,7 +105,8 @@
       "price": "90.000",
       "color": "Gris",
       "badge": false,
-      "des": "Le damos la bienvenida al gorro Patch Beanie, tu mejor aliado para protegerte en tus aventuras a bajas temperaturas. Fabricado principalmente en materiales reciclados"
+      "des": "Le damos la bienvenida al gorro Patch Beanie, tu mejor aliado para protegerte en tus aventuras a bajas temperaturas. Fabricado principalmente en materiales reciclados",
+      "id": "2e50"
     },
     {
       "_id": "100009",
@@ -107,7 +115,8 @@
       "price": "80.000",
       "color": "Negro",
       "badge": false,
-      "des": "Te presentamos nuestro beanie Cochamó, una opción sostenible, cálida y cómoda para mantenerte abrigado con estilo."
+      "des": "Te presentamos nuestro beanie Cochamó, una opción sostenible, cálida y cómoda para mantenerte abrigado con estilo.",
+      "id": "8504"
     },
     {
       "_id": "100010",
@@ -116,7 +125,8 @@
       "price": "100.000",
       "color": "Negro",
       "badge": false,
-      "des": "Completa tu outfit y sube de nivel tu estilo con esta gorra de los Chicago White Sox, Compra ahora tú Gorra Chicago White Sox"
+      "des": "Completa tu outfit y sube de nivel tu estilo con esta gorra de los Chicago White Sox, Compra ahora tú Gorra Chicago White Sox",
+      "id": "605a"
     },
     {
       "_id": "100011",
@@ -125,7 +135,8 @@
       "price": "100.000",
       "color": "Gris",
       "badge": false,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Seasonal Infill Collection Con 100% algodón Gris de los Los Angeles Dodgers Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Seasonal Infill Collection Con 100% algodón Gris de los Los Angeles Dodgers Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "0f74"
     },
     {
       "_id": "100012",
@@ -134,7 +145,8 @@
       "price": "50.000",
       "color": "Blanco",
       "badge": false,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Ocean Icon Collection Con 100% poliéster Reciclado Blanco de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Ocean Icon Collection Con 100% poliéster Reciclado Blanco de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "fb31"
     },
     {
       "_id": "100013",
@@ -143,7 +155,8 @@
       "price": "50.000",
       "color": "Blanco y Negro",
       "badge": false,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Pinstripe Collection Con Corona y medios 100% poliéster Negro de los New York Yankees"
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Pinstripe Collection Con Corona y medios 100% poliéster Negro de los New York Yankees",
+      "id": "63ce"
     },
     {
       "_id": "100014",
@@ -152,7 +165,8 @@
       "price": "40.000",
       "color": "Beige",
       "badge": false,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Camo Collection Con 100% poliéster Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Camo Collection Con 100% poliéster Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "f71f"
     },
     {
       "_id": "100015",
@@ -161,7 +175,8 @@
       "price": "40.000",
       "color": "Naranja",
       "badge": false,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Washed Collection Con 100% algodón Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la Washed Collection Con 100% algodón Negro de los New York Yankees Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "bc8e"
     },
     {
       "_id": "100016",
@@ -170,7 +185,8 @@
       "price": "140.000",
       "color": "Blanco",
       "badge": false,
-      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 100% algodón Blanco de los Los Angeles Dodgers Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo."
+      "des": "Completa tu outfit y sube de nivel tu estilo con Esta Gorra de la World Series Collection Con 100% algodón Blanco de los Los Angeles Dodgers Y Se Completa Con Paneles Estructurados Que Garantizan Un Acabado Cómodo.",
+      "id": "cad2"
     }
   ],
   "messages": [
@@ -208,39 +224,15 @@
   "users": [
     {
       "id": "af91",
-      "photo": "https://media.istockphoto.com/id/1495088043/es/vector/icono-de-perfil-de-usuario-avatar-o-icono-de-persona-foto-de-perfil-s%C3%ADmbolo-de-retrato.jpg?s=612x612&w=0&k=20&c=mY3gnj2lU7khgLhV6dQBNqomEGj3ayWH-xtpYuCXrzk=",
-      "name": "Felipe Sanchez",
-      "email": "felipe@gmail.com",
+      "photo": "https://static.inaturalist.org/attachments/users/icons/1363556/medium.jpg?1547013498",
+      "name": "Felipe Contreras",
+      "email": "felipecon@gmail.com",
       "phone": "3227238923",
-      "password": "$2a$10$IkL.5naXRZP7VGPXqmP0Yuo.gKr5i.boMPGfsBarXb4UEcPKf9aNm",
+      "password": "$2a$10$Cu8eoHNNgTP.URu3zYTjV.AukTnOKNoKWPOvM00Clbqv1vUfbd79O",
       "address": "3398",
       "city": "Bogotá",
-      "zip": "110611",
+      "zip": "909090",
       "role": "Administrador"
-    },
-    {
-      "id": "5904",
-      "photo": "https://media.istockphoto.com/id/1495088043/es/vector/icono-de-perfil-de-usuario-avatar-o-icono-de-persona-foto-de-perfil-s%C3%ADmbolo-de-retrato.jpg?s=612x612&w=0&k=20&c=mY3gnj2lU7khgLhV6dQBNqomEGj3ayWH-xtpYuCXrzk=",
-      "name": "Narly Sanchez",
-      "email": "narly@gmail.com",
-      "phone": "3134475678",
-      "password": "$2a$10$G9PGUgIjVAM59R207RQcZu5AEZPyTJXBKV6.u8IjwzajN3N6OWjTC",
-      "address": "Cl. 55 Sur #33-15",
-      "city": "Bogotá",
-      "zip": "110611",
-      "role": "Empleado"
-    },
-    {
-      "id": "385d",
-      "photo": "https://media.istockphoto.com/id/1495088043/es/vector/icono-de-perfil-de-usuario-avatar-o-icono-de-persona-foto-de-perfil-s%C3%ADmbolo-de-retrato.jpg?s=612x612&w=0&k=20&c=mY3gnj2lU7khgLhV6dQBNqomEGj3ayWH-xtpYuCXrzk=",
-      "name": "Johan Salazar",
-      "email": "jhoan@gmail.com",
-      "phone": "3106015401",
-      "password": "$2a$10$iCnwJyKWABrkFno.6L.97eCmfnT5M26KfqXkr1E.D6/K9l89jF8yq",
-      "address": "Cl. 59 Sur #33-15",
-      "city": "Bogotá",
-      "zip": "110611",
-      "role": "Cliente"
     }
   ]
 }
