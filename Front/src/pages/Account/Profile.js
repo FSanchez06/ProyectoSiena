@@ -4,7 +4,7 @@ import Breadcrumbs from "../../components/pageProps/Breadcrumbs";
 import axios from "axios";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
-import bcrypt from "bcryptjs";  // Importamos bcryptjs
+import bcrypt from "bcryptjs";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -105,10 +105,15 @@ const Profile = () => {
 
     setModalType("updating");
     try {
-      await axios.patch(`http://localhost:3002/users/${userInfo[0].id}`, { photo: newPhoto });
-      setUserData((prevData) => ({ ...prevData, photo: newPhoto }));
-      setOriginalData((prevData) => ({ ...prevData, photo: newPhoto }));
-      setModalType("successPhotoUpdate");
+      const response = await axios.patch(`http://localhost:3002/users/${userInfo[0].id}`, { photo: newPhoto });
+
+      if (response.status === 200 || response.status === 204) {
+        setUserData((prevData) => ({ ...prevData, photo: newPhoto }));
+        setOriginalData((prevData) => ({ ...prevData, photo: newPhoto }));
+        setModalType("successPhotoUpdate");
+      } else {
+        throw new Error("Error inesperado al actualizar la foto.");
+      }
     } catch (error) {
       setModalType("error");
     }
@@ -120,51 +125,49 @@ const Profile = () => {
   };
 
   const handlePasswordSubmit = () => {
-    // Se abre la modal con los campos de contraseña
     setModalType("changePassword");
     setIsModalOpen(true);
   };
 
   const confirmPasswordChange = async () => {
-    // Verifica si los campos están vacíos
     if (Object.values(passwordData).some((field) => !field)) {
       setModalType("emptyPasswordFields");
+      setTimeout(() => setIsModalOpen(false), 3000); // Cerrar modal después de 3 segundos
       return;
     }
-    
-    // Validar longitud de la nueva contraseña
+
     if (passwordData.newPassword.length < 6) {
       setModalType("passwordTooShort");
+      setTimeout(() => setIsModalOpen(false), 3000); // Cerrar modal después de 3 segundos
       return;
     }
 
-    // Verificar si la nueva contraseña coincide con la confirmación
     if (passwordData.newPassword !== passwordData.confirmPassword) {
       setModalType("passwordMismatch");
+      setTimeout(() => setIsModalOpen(false), 3000); // Cerrar modal después de 3 segundos
       return;
     }
 
-    // Comparar la contraseña antigua con la almacenada en la base de datos
     try {
       const response = await axios.get(`http://localhost:3002/users/${userInfo[0].id}`);
       const user = response.data;
-      
+
       const isOldPasswordCorrect = await bcrypt.compare(passwordData.oldPassword, user.password);
       if (!isOldPasswordCorrect) {
         setModalType("incorrectOldPassword");
+        setTimeout(() => setIsModalOpen(false), 3000); // Cerrar modal después de 3 segundos
         return;
       }
 
-      // Encriptar la nueva contraseña antes de enviarla
       const hashedPassword = await bcrypt.hash(passwordData.newPassword, 10);
 
-      // Actualizar la contraseña encriptada si todas las validaciones son correctas
       setModalType("changingPassword");
       await axios.patch(`http://localhost:3002/users/${userInfo[0].id}`, { password: hashedPassword });
       setModalType("successPasswordChange");
       setPasswordData({ oldPassword: "", newPassword: "", confirmPassword: "" });
     } catch (error) {
       setModalType("error");
+      setTimeout(() => setIsModalOpen(false), 3000); // Cerrar modal después de 3 segundos en caso de error
     }
   };
 
@@ -222,6 +225,14 @@ const Profile = () => {
             </button>
           </div>
         </form>
+        <div className="mt-8 flex justify-center">
+          <button
+            className="bg-primeColor text-white py-2 px-6 rounded-lg font-semibold text-1xl hover:bg-black transition duration-200"
+            onClick={() => navigate(`/dashboard/${userData.role.toLowerCase()}`)}
+          >
+            Ir al Dashboard de {userData.role}
+          </button>
+        </div>
       </div>
 
       {isModalOpen && (
@@ -288,6 +299,16 @@ const Modal = ({
       action: handlePhotoSubmit,
       confirmButtonText: "Confirmar",
       cancelButtonText: "Cancelar",
+    },
+    successPhotoUpdate: {
+      title: "Foto actualizada correctamente",
+      message: (
+        <motion.div className="w-12 h-12 bg-green-500 rounded-full flex items-center justify-center mb-4">
+          <span className="text-white text-2xl">✓</span>
+        </motion.div>
+      ),
+      action: handleBackToProfile,
+      confirmButtonText: "Ver perfil",
     },
     changePassword: {
       title: "Cambiar contraseña",

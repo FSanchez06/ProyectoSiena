@@ -1,4 +1,4 @@
-// proyectogrupal/Front/src/pages/Account/SignIn.js
+// proyecto/Front/src/pages/Account/SignIn.js
 
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";

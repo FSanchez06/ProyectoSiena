@@ -15,7 +15,7 @@ export const orebiSlice = createSlice({
       );
       if (item) {
         item.quantity += action.payload.quantity;
-      } else {
+      } else { 
         state.products.push(action.payload);
       }
     },
