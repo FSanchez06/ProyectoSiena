@@ -1,16 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dashboard from '../../components/Dashboard/Dashboard';
 import Navbar from '../../components/Dashboard/Navbar';
 import Sidebar from '../../components/Dashboard/Sidebar';
 
 const AdminDashboard = () => {
+  const [activeSection, setActiveSection] = useState('Usuarios'); // Sección activa por defecto
+
   return (
     <div className='flex'>
-      <Sidebar />
-      <div className='grow ml-16 md:ml-64 h-full lg:h-screen bg-white text-gray-900'>
+      <Sidebar setActiveSection={setActiveSection} />
+      <div className='flex-grow ml-64'>
         <Navbar />
-        <div>
-          <Dashboard />
+        <div className='p-4'>
+          <Dashboard activeSection={activeSection} />
         </div>
       </div>
     </div>

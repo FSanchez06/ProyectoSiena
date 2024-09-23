@@ -3,43 +3,29 @@ import { useDispatch, useSelector } from 'react-redux';
 import { removeUserInfo } from '../../redux/orebiSlice';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Modal from '../Modal/Modal'; // Asegúrate de importar el nuevo componente Modal
 
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const userInfo = useSelector((state) => state.orebiReducer.userInfo[0]); // Accede a la información del primer usuario
-  const [dropdownOpen, setDropdownOpen] = useState(false); // Estado para controlar el menú desplegable
-  const [modalVisible, setModalVisible] = useState(false); // Estado para controlar la visibilidad del modal
-  const [loadingMessage, setLoadingMessage] = useState('');
-  const dropdownRef = useRef(null); // Ref para el menú desplegable
+  const userInfo = useSelector((state) => state.orebiReducer.userInfo[0]);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const dropdownRef = useRef(null);
 
   const handleLogout = () => {
-    setLoadingMessage('Cerrando sesión...');
     setDropdownOpen(false);
-    setModalVisible(true);
-    
-    setTimeout(() => {
-      dispatch(removeUserInfo()); // Despacha la acción para eliminar la información del usuario
-      navigate('/signin'); // Redirige a la página de inicio de sesión
-    }, 3000); // Espera 3 segundos antes de cerrar sesión
+    dispatch(removeUserInfo());
+    navigate('/signin');
   };
 
   const handleRedirect = () => {
-    setLoadingMessage(`Redirigiendo al perfil del usuario ${userInfo.name}...`);
     setDropdownOpen(false);
-    setModalVisible(true);
-    
-    setTimeout(() => {
-      navigate('/profile'); // Redirige al perfil después de mostrar el mensaje
-    }, 3000); // Espera 3 segundos antes de redirigir
+    navigate('/profile');
   };
 
   const toggleDropdown = () => {
-    setDropdownOpen((prev) => !prev); // Alterna el estado del menú desplegable
+    setDropdownOpen((prev) => !prev);
   };
 
-  // Cierra el menú si se hace clic fuera de él
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
@@ -55,7 +41,6 @@ const Navbar = () => {
 
   return (
     <div className='bg-white text-gray-900 border-b border-gray-300 p-4 flex justify-between items-center'>
-      {/* Mensaje de bienvenida con animación */}
       {userInfo ? (
         <motion.div 
           initial={{ opacity: 0, y: -10 }} 
@@ -76,7 +61,6 @@ const Navbar = () => {
         </button>
       )}
 
-      {/* Apartado del usuario a la derecha */}
       {userInfo && (
         <div className='relative flex items-center ml-4'>
           <button onClick={toggleDropdown} className='flex items-center'>
@@ -84,14 +68,14 @@ const Navbar = () => {
             <span className='ml-2 font-medium text-gray-800'>{userInfo.name}</span>
           </button>
 
-          {/* Menú desplegable */}
           {dropdownOpen && (
             <motion.div 
-              ref={dropdownRef} // Asignar ref al menú desplegable
+              ref={dropdownRef}
               initial={{ opacity: 0, y: -10 }} 
               animate={{ opacity: 1, y: 0 }} 
+              exit={{ opacity: 0, y: -10 }} 
               transition={{ duration: 0.3 }}
-              className='absolute right-0 mt-28 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-10'
+              className='absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg z-10'
             >
               <button 
                 onClick={handleRedirect} 
@@ -108,11 +92,6 @@ const Navbar = () => {
             </motion.div>
           )}
         </div>
-      )}
-
-      {/* Ventana modal */}
-      {modalVisible && (
-        <Modal message={loadingMessage} loading={true} onClose={() => setModalVisible(false)} />
       )}
     </div>
   );

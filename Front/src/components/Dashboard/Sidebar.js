@@ -1,57 +1,58 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-const Sidebar = () => {
-  const navigate = useNavigate();
+const Sidebar = ({ setActiveSection }) => {
+  const userInfo = useSelector((state) => state.orebiReducer.userInfo[0]); // Obtener la información del usuario
+  const userRole = userInfo?.role; // Obtener el rol del usuario
 
-  const handleNavigation = (path) => {
-    navigate(path); // Navega a la ruta correspondiente
+  const handleNavigation = (section) => {
+    setActiveSection(section); // Actualiza la sección activa
   };
 
+  // Secciones disponibles según el rol
+  const sections = {
+    Admin: [
+      'Usuarios',
+      'Productos',
+      'Customizaciones',
+      'Pedidos',
+      'Ventas',
+      'Mensajes',
+      'Banners',
+      'Ofertas'
+    ],
+    Empleado: [
+      'Usuarios',
+      'Customizaciones',
+      'Pedidos',
+      'Ventas',
+      'Mensajes',
+      'Banners',
+      'Ofertas'
+    ],
+    Cliente: [
+      'Pedidos',       // Solo puede ver sus propios pedidos
+      'Customizaciones' // Solo puede ver sus propias customizaciones
+    ],
+  };
+
+  // Filtrar las secciones a mostrar según el rol
+  const availableSections = sections[userRole] || [];
+
   return (
-    <div className="w-64 h-full bg-gray-800 text-white p-4">
-      <h2 className="text-lg font-bold mb-4">Panel de Control</h2>
+    <div className="w-64 h-screen bg-white text-gray-900 shadow-md fixed">
+      <h2 className="text-lg font-bold mb-4 text-center">Panel de Control</h2>
       <ul className="space-y-2">
-        <li>
-          <button onClick={() => handleNavigation('/usuarios')} className="w-full text-left hover:bg-gray-700 p-2 rounded">
-            Usuarios
-          </button>
-        </li>
-        <li>
-          <button onClick={() => handleNavigation('/productos')} className="w-full text-left hover:bg-gray-700 p-2 rounded">
-            Productos
-          </button>
-        </li>
-        <li>
-          <button onClick={() => handleNavigation('/customizaciones')} className="w-full text-left hover:bg-gray-700 p-2 rounded">
-            Customizaciones
-          </button>
-        </li>
-        <li>
-          <button onClick={() => handleNavigation('/pedidos')} className="w-full text-left hover:bg-gray-700 p-2 rounded">
-            Pedidos
-          </button>
-        </li>
-        <li>
-          <button onClick={() => handleNavigation('/ventas')} className="w-full text-left hover:bg-gray-700 p-2 rounded">
-            Ventas
-          </button>
-        </li>
-        <li>
-          <button onClick={() => handleNavigation('/mensajes')} className="w-full text-left hover:bg-gray-700 p-2 rounded">
-            Mensajes
-          </button>
-        </li>
-        <li>
-          <button onClick={() => handleNavigation('/banners')} className="w-full text-left hover:bg-gray-700 p-2 rounded">
-            Banners
-          </button>
-        </li>
-        <li>
-          <button onClick={() => handleNavigation('/ofertas')} className="w-full text-left hover:bg-gray-700 p-2 rounded">
-            Ofertas
-          </button>
-        </li>
+        {availableSections.map(section => (
+          <li key={section}>
+            <button 
+              onClick={() => handleNavigation(section)} 
+              className="w-full text-left hover:bg-gray-200 p-2 rounded transition duration-200 ease-in-out"
+            >
+              {section}
+            </button>
+          </li>
+        ))}
       </ul>
     </div>
   );
